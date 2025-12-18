@@ -104,11 +104,16 @@ public class GenericCpu : Hardware
         TimeStampCounterFrequency = _estimatedTimeStampCounterFrequency;
     }
 
+   
     /// <summary>
     /// Gets the CPUID.
     /// </summary>
     public CpuId[][] CpuId => _cpuId;
 
+    public double GetEstimateTSCounterFrequency()
+    {
+        return TimeStampCounterFrequency;
+    }
     public override HardwareType HardwareType => HardwareType.Cpu;
 
     public bool HasModelSpecificRegisters { get; }
